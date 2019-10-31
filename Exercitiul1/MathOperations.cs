@@ -11,7 +11,7 @@ namespace Exercises
 
         public static void AddTwoNumbers()
         {
-            Console.WriteLine("Enter 1st  number:");
+            Console.WriteLine("Enter 1st test number:");
             var isNumber1 = int.TryParse(Console.ReadLine(), out int firstNumber);
             CheckIsNumeric(isNumber1);
 
