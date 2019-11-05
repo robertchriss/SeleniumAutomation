@@ -7,7 +7,7 @@ namespace UnitTesting
     public class Week1
     {
         [TestMethod]
-        public void WelcomeUser_returns_entered_name()
+        public void WelcomeUser_Returns_enteredName()
         {
             var actualMessage = GreetingHelper.GetGreetingMessage("doris");
             var expectedMessage = "Hi doris!";
@@ -16,7 +16,7 @@ namespace UnitTesting
         }
 
         [TestMethod]
-        public void AddToNumber_returns_expected_result()
+        public void AddToNumber_Returns_expectedResult()
         {
             var actualSum = MathOperations.GetSum(1,3);
             var expectedSum = 4;

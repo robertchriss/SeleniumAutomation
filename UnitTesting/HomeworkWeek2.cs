@@ -1,5 +1,4 @@
-﻿
-using Exercises;
+﻿using Exercises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTesting
@@ -8,7 +7,7 @@ namespace UnitTesting
     public class HomeworkWeek2
     {
         [TestMethod]
-        public void ReturnYCoord_returnsyCoordEqualsInitialXCoord_and_xCoordAsCopyOfInitialXCoord()
+        public void ReturnYCoord_Returns_YCoordAndProvesValueType()
         {
             int initialXCoord = 10;
             int numberToAdd = 12;
@@ -21,7 +20,7 @@ namespace UnitTesting
         }
 
         [TestMethod]
-        public void ReturnPerson2Age_returnsPerson2EqualsToPerson1_and_Person1IsAReference()
+        public void ReturnPerson2Age_Returns_SecondPersonAndProvesReferenceType()
         {
             PersonModel initialPerson1 = new PersonModel();
             PersonModel returnedPerson2 = new PersonModel();
