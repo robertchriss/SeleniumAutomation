@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-/Exercitiul1/obj/Debug
+/Exercises/obj/Debug
+/.vs/SeleniumAutomation/v16

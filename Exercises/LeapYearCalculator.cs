@@ -28,7 +28,7 @@ namespace Exercises
             }
         }
 
-        private static bool IsLeapYear(int givenYear)
+        public static bool IsLeapYear(int givenYear)
         {
             if (givenYear % 4 == 0)
             {

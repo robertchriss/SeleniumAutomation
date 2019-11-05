@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Exercises;
+﻿using Exercises;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace UnitTesting
 {
     [TestClass]
-    public class UnitTest1
+    public class Week1
     {
         [TestMethod]
         public void WelcomeUser_returns_entered_name()

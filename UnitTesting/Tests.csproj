@@ -49,14 +49,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="HomeworkWeek1.cs" />
+    <Compile Include="HomeworkWeek2.cs" />
+    <Compile Include="Week1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exercitiul1\Exercises.csproj">
+    <ProjectReference Include="..\Exercises\Exercises.csproj">
       <Project>{c9eef5ec-2dd7-4fb4-a779-c98dcbecfb2f}</Project>
       <Name>Exercises</Name>
     </ProjectReference>
