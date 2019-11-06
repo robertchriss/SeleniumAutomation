@@ -6,7 +6,7 @@
         {
             PersonModel person2 = new PersonModel();
             person2 = person1;
-            //person1.age = newPerson1Age;
+            person1.age = newPerson1Age;
 
             return person2.age;
         }
