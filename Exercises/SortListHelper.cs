@@ -8,16 +8,14 @@ namespace Exercises
         {
             int temp;
 
-            for (int i = 0; i < numberList.Count; i++)
+            for (int i = 0; i < numberList.Count-1; i++)
             {
-                for (int j = i + 1; j < numberList.Count; j++)
+                for (int j = 0; j < numberList.Count-1; j++)
                 {
-                    if (numberList[i] > numberList[j])
+                    if (numberList[j] > numberList[j+1])
                     {
-                        temp = numberList[i];
-
-                        numberList[i] = numberList[j];
-
+                        temp = numberList[j + 1];
+                        numberList[j + 1] = numberList[j];
                         numberList[j] = temp;
                     }
                 }
