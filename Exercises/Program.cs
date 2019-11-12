@@ -31,20 +31,7 @@ namespace Exercises
             #endregion
 
             #region tema
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            SortListHelper sortListHelper = new SortListHelper();
-            List<int> bubbleList = new List<int> { 800, 11, 50, 771, 649, 770, 240, 9, 100, 33, 245, 3454, 78, 03, 34 };
-            sortListHelper.BubbleSortList(bubbleList);
-            stopwatch.Stop();
-            Console.WriteLine("Time elapsed: " + stopwatch.Elapsed);
-
-            stopwatch.Reset();
-            stopwatch.Start();
-            List<int> numberList = new List<int> { 800, 11, 50, 771, 649, 770, 240, 9, 100, 33, 245, 3454, 78, 03, 34 };
-            numberList.Sort();
-            stopwatch.Stop();
-            Console.WriteLine("Time elapsed: " + stopwatch.Elapsed);
+            
             #endregion
         }
     }

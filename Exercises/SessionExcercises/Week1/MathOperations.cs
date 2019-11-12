@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercises
+namespace Exercises.SessionExcerises
 {
     public static class MathOperations
     {

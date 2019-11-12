@@ -1,4 +1,6 @@
-﻿namespace Exercises
+﻿using Exercises.Models;
+
+namespace Exercises.SessionExcerises
 {
     public static class ReferenceTypeOperations
     {
@@ -6,9 +8,9 @@
         {
             PersonModel person2 = new PersonModel();
             person2 = person1;
-            person1.age = newPerson1Age;
+            person1.Age = newPerson1Age;
 
-            return person2.age;
+            return person2.Age;
         }
     }
 }

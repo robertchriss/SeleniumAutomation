@@ -1,4 +1,5 @@
-﻿using Exercises;
+﻿using Exercises.Models;
+using Exercises.SessionExcerises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTesting
@@ -25,13 +26,13 @@ namespace UnitTesting
             PersonModel initialPerson1 = new PersonModel();
             PersonModel returnedPerson2 = new PersonModel();
             
-            initialPerson1.age = 20;
+            initialPerson1.Age = 20;
             int newPerson1Age = 25;
 
-            returnedPerson2.age = ReferenceTypeOperations.ReturnPerson2Age(initialPerson1, newPerson1Age);
+            returnedPerson2.Age = ReferenceTypeOperations.ReturnPerson2Age(initialPerson1, newPerson1Age);
 
-            Assert.AreEqual(initialPerson1.age, 25);
-            Assert.AreEqual(returnedPerson2.age, 25);
+            Assert.AreEqual(initialPerson1.Age, 25);
+            Assert.AreEqual(returnedPerson2.Age, 25);
         }
     }
 }

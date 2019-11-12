@@ -1,4 +1,4 @@
-﻿namespace Exercises
+﻿namespace Exercises.SessionExcerises
 {
     public static class ValueTypeOperations
     {

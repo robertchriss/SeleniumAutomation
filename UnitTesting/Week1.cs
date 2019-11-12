@@ -1,4 +1,4 @@
-﻿using Exercises;
+﻿using Exercises.SessionExcerises;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTesting
