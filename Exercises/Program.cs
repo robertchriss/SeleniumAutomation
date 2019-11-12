@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Exercises
 {
@@ -6,34 +8,44 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-        #region valueExemple
+            #region exercitiu
+            //numaram cate obiecte sunt in lista
+            StudentsList studentsList = new StudentsList();
+            List<string> returnedSudentList = studentsList.GetStudentList();
+            Console.WriteLine("Students total count: {0}", returnedSudentList.Count);
 
-            int xCoord = 10;
-            int yCoord = xCoord;
+            //imprimam lista
+            foreach (string student in returnedSudentList)
+            {
+                Console.WriteLine(student);
+            }
 
-            xCoord = 12;
+            //verificam cati studenti sunt cu numele 'Alex'
+            foreach (string student in returnedSudentList)
+            {
+                if (student.ToLower().Contains("alex"))
+                {
+                    Console.WriteLine(student);
+                }
+            }
+            #endregion
 
-            Console.WriteLine("x is : " + xCoord);
-            Console.WriteLine("Y is : " + yCoord);
+            #region tema
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            SortListHelper sortListHelper = new SortListHelper();
+            List<int> bubbleList = new List<int> { 800, 11, 50, 771, 649, 770, 240, 9, 100, 33, 245, 3454, 78, 03, 34 };
+            sortListHelper.BubbleSortList(bubbleList);
+            stopwatch.Stop();
+            Console.WriteLine("Time elapsed: " + stopwatch.Elapsed);
 
-        #endregion
-
-        #region referenceExemple
-
-            PersonModel person1 = new PersonModel();
-            PersonModel person2 = new PersonModel();
-
-            person1.age = 20;
-            person1.name = "Maria";
-
-            person2 = person1;
-
-            person1.age = 25;
-
-            Console.WriteLine("person1 age is : " + person1.age);
-            Console.WriteLine("person2 age is : " + person2.age);
-
-        #endregion
+            stopwatch.Reset();
+            stopwatch.Start();
+            List<int> numberList = new List<int> { 800, 11, 50, 771, 649, 770, 240, 9, 100, 33, 245, 3454, 78, 03, 34 };
+            numberList.Sort();
+            stopwatch.Stop();
+            Console.WriteLine("Time elapsed: " + stopwatch.Elapsed);
+            #endregion
         }
     }
 }
