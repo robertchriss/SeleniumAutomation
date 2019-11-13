@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\StudentsModel.cs" />
+    <Compile Include="Services\StudentServices.cs" />
     <Compile Include="SessionExcercises\Week1\LeapYearCalculator.cs" />
     <Compile Include="SessionExcercises\Week1\MathOperations.cs" />
     <Compile Include="Models\PersonModel.cs" />
@@ -57,8 +59,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
