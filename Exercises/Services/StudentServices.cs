@@ -20,6 +20,8 @@ namespace Exercises.Services
                     FirstName = student.Replace(lastName, "").Trim(),
                     LastName = lastName
                 };
+
+                returnedList.Add(studentToAdd);
             }
 
             return returnedList;
