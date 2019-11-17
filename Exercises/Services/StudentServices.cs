@@ -5,9 +5,9 @@ namespace Exercises.Services
 {
     public class StudentServices
     {
-        public List<StudentsModel> CreateStudentsFromFullNameList(List<string> stundentList)
+        public List<StudentModel> CreateStudentsFromFullNameList(List<string> stundentList)
         {
-            List<StudentsModel> returnedList = new List<StudentsModel>();
+            List<StudentModel> returnedList = new List<StudentModel>();
 
             foreach(string student in stundentList)
             {
@@ -15,7 +15,7 @@ namespace Exercises.Services
                 int lastIndex = fullNameArray.Length - 1;
                 string lastName = fullNameArray[lastIndex];
 
-                StudentsModel studentToAdd = new StudentsModel
+                StudentModel studentToAdd = new StudentModel
                 {
                     FirstName = student.Replace(lastName, "").Trim(),
                     LastName = lastName
