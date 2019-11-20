@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CourseModel.cs" />
     <Compile Include="Models\StudentModel.cs" />
+    <Compile Include="Services\CourseService.cs" />
     <Compile Include="Services\StudentServices.cs" />
     <Compile Include="SessionExcercises\Week1\LeapYearCalculator.cs" />
     <Compile Include="SessionExcercises\Week1\MathOperations.cs" />
