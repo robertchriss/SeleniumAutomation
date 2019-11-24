@@ -16,5 +16,16 @@ namespace Exercises.Services
 
             course.Students.AddRange(students);
         }
+
+        public void ModifyCourseDates(CourseModel course, DateTime startDate, DateTime endDate)
+        {
+            if (course == null)
+            {
+                throw new Exception("Course cannot be null");
+            }
+
+            course.StartDate = startDate;
+            course.EndDate = endDate;
+        }
     }
 }

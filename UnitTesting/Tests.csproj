@@ -52,6 +52,7 @@
     <Compile Include="HomeworkWeek1.cs" />
     <Compile Include="HomeworkWeek2.cs" />
     <Compile Include="HomeworkWeek3.cs" />
+    <Compile Include="HomeworkWeek4.cs" />
     <Compile Include="Week1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Week4.cs" />
