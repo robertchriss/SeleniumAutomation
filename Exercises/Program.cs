@@ -8,7 +8,8 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
-            
+            GreetingHelper greetingHelper = new GreetingHelper();
+            GreetingHelper.GetGreetingMessage("Nume");
         }
     }
 }
