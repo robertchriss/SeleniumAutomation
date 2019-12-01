@@ -25,11 +25,20 @@ namespace UnitTesting
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), 
             "Teaching experience calculation with a begin teaching year that is set in the future should throw ArgumentException")]
-        public void CalculateTeachingExperience_NegativeScenario_BeginYearIsInTheFuture()
+        public void CalculateTeachingExperience_NegativeScenario_Solution1_BeginYearIsInTheFuture()
         {
             beginTeachingYear = 2020;
 
             teacherService.CalculateTeachingExperience(teacher, beginTeachingYear);
+        }
+
+        [TestMethod]
+        public void CalculateTeachingExperience_NegativeScenario_Solution2_BeginYearIsInTheFuture()
+        {
+            beginTeachingYear = 2020;
+
+            Assert.ThrowsException<ArgumentException>(
+                () => teacherService.CalculateTeachingExperience(teacher, beginTeachingYear));
         }
 
         [TestMethod]
