@@ -7,7 +7,14 @@ namespace Exercises.Services
     {
         public void CalculateTeachingExperience(TeacherModel teacher, int beginTeachingYear)
         {
-            teacher.TeachingExperience = DateTime.Now.Year - beginTeachingYear;
+            if (beginTeachingYear <= DateTime.Now.Year)
+            {
+                teacher.TeachingExperience = DateTime.Now.Year - beginTeachingYear;
+            }
+            else
+            {
+                throw new ArgumentException("The year you've entered is not valid: "+ beginTeachingYear);
+            }
         }
     }
 }
