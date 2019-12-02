@@ -1,6 +1,6 @@
 ﻿namespace Exercises.Models
 {
-    public class StudentModel
+    public class StudentModel : PersonModel
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

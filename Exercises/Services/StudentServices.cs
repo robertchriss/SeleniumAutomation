@@ -1,4 +1,5 @@
 ﻿using Exercises.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Exercises.Services
@@ -25,6 +26,26 @@ namespace Exercises.Services
             }
 
             return returnedList;
+        }
+
+        public string GetStudentLastName(StudentModel student)
+        {
+            if (student.FullName != null &&
+                !student.FullName.Equals(""))
+            {
+                string[] fullNameArray = student.FullName.Split(' ');
+                int lastIndex = fullNameArray.Length - 1;
+                return fullNameArray[lastIndex];
+            }
+            else throw new ArgumentException("No full name was set");
+        }
+
+        public string GetStudentFirstName(StudentModel student)
+        {
+            if (student.LastName == null)
+                student.LastName = GetStudentFirstName(student);
+
+            return student.FullName.Replace(student.LastName, "").Trim();
         }
     }
 }

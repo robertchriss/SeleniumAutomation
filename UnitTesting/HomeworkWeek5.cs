@@ -11,12 +11,14 @@ namespace UnitTesting
         int beginTeachingYear;
         TeacherModel teacher;
         TeacherService teacherService;
-
-         public HomeworkWeek5()
+        
+        [TestInitialize]
+         public void init()
         {
             teacher = new TeacherModel
             {
                 FullName = "Petrisoru Doris",
+                Age = 24
             };
 
             teacherService = new TeacherService();

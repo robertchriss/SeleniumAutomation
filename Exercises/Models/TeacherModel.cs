@@ -2,9 +2,8 @@
 
 namespace Exercises.Models
 {
-    public class TeacherModel
+    public class TeacherModel : PersonModel
     {
-        public string FullName { get; set; }
 
         public int TeachingExperience { get; set; }
 
