@@ -43,7 +43,7 @@ namespace Exercises.Services
         public string GetStudentFirstName(StudentModel student)
         {
             if (student.LastName == null)
-                student.LastName = GetStudentFirstName(student);
+                student.LastName = GetStudentLastName(student);
 
             return student.FullName.Replace(student.LastName, "").Trim();
         }
