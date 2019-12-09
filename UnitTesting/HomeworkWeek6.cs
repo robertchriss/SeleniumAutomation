@@ -34,7 +34,7 @@ namespace UnitTesting
         [TestMethod]
         public void GetStudentLastNameAndFirstNam_ReturnsArgumentException()
         {
-            student.FullName = fullName;
+            student.FullName = null;
 
             Assert.ThrowsException<ArgumentException>(() => studentService.GetStudentLastName(student));
             Assert.ThrowsException<ArgumentException>(() => studentService.GetStudentFirstName(student));
