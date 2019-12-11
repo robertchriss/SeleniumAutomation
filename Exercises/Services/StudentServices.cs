@@ -53,8 +53,9 @@ namespace Exercises.Services
         {
             if (student.LastName == null)
                 student.LastName = GetStudentLastName(student);
+            student.FirstName = student.FullName.Replace(student.LastName, "").Trim();
 
-            return student.FullName.Replace(student.LastName, "").Trim();
+            return student.FirstName;
         }
     }
 }
