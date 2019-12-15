@@ -67,6 +67,22 @@ namespace Exercises
                 if (isTheCorrectAnswer) rightAnswers++;
 
             }
+
+            //get grade
+            double score = 0;
+            try
+            {
+                score = Math.Round((double)(rightAnswers * 10) / quiz.ListOfQuestions.Count);
+            }
+            catch (DivideByZeroException) { }
+            student.Grade = score;
+
+            //print out student information
+            Console.WriteLine();
+            Console.WriteLine(@"Final grade: {0}
+Student: {1}
+Course: {2}
+Teacher: {3}", student.Grade, student.FullName, course.Name, teacher.FullName);
         }
     }
 }
