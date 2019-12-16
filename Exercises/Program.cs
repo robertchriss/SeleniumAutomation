@@ -40,6 +40,7 @@ namespace Exercises
             };
             #endregion
 
+            #region exercitiu sesiunea 2
             //take quiz
             var quiz = QuizData.GetFirstQuiz();
             int rightAnswers = 0;
@@ -67,6 +68,7 @@ namespace Exercises
                 if (isTheCorrectAnswer) rightAnswers++;
 
             }
+            #endregion
 
             //get grade
             double score = 0;
