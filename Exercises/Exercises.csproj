@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\QuizData.cs" />
+    <Compile Include="Helpers\Constants.cs" />
     <Compile Include="Helpers\EncryptDecryptHelper.cs" />
     <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\CourseModel.cs" />

@@ -11,12 +11,12 @@ namespace Exercises.Helpers
         private const int Keysize = 256;
         private const int DerivationIterations = 1000;
 
-        public static string Encrypt(string plainText, string passPhrase)
+        public static string Encrypt(string plainText)
         {
             var saltStringBytes = Generate256BitsOfRandomEntropy();
             var ivStringBytes = Generate256BitsOfRandomEntropy();
             var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
-            using (var password = new Rfc2898DeriveBytes(passPhrase, saltStringBytes, DerivationIterations))
+            using (var password = new Rfc2898DeriveBytes(Constants.STRINGPHRASE, saltStringBytes, DerivationIterations))
             {
                 var keyBytes = password.GetBytes(Keysize / 8);
                 using (var symmetricKey = new RijndaelManaged())
@@ -45,14 +45,14 @@ namespace Exercises.Helpers
             }
         }
 
-        public static string Decrypt(string cipherText, string passPhrase)
+        public static string Decrypt(string cipherText)
         {
             var cipherTextBytesWithSaltAndIv = Convert.FromBase64String(cipherText);
             var saltStringBytes = cipherTextBytesWithSaltAndIv.Take(Keysize / 8).ToArray();
             var ivStringBytes = cipherTextBytesWithSaltAndIv.Skip(Keysize / 8).Take(Keysize / 8).ToArray();
             var cipherTextBytes = cipherTextBytesWithSaltAndIv.Skip((Keysize / 8) * 2).Take(cipherTextBytesWithSaltAndIv.Length - ((Keysize / 8) * 2)).ToArray();
 
-            using (var password = new Rfc2898DeriveBytes(passPhrase, saltStringBytes, DerivationIterations))
+            using (var password = new Rfc2898DeriveBytes(Constants.STRINGPHRASE, saltStringBytes, DerivationIterations))
             {
                 var keyBytes = password.GetBytes(Keysize / 8);
                 using (var symmetricKey = new RijndaelManaged())
@@ -86,16 +86,6 @@ namespace Exercises.Helpers
                 rngCsp.GetBytes(randomBytes);
             }
             return randomBytes;
-        }
-
-        public static void Encript_password(string inputpassword, string key)
-        {
-
-
-            string password = EncryptDecryptHelper.Encrypt(inputpassword, key);
-            string decriptedpwd = EncryptDecryptHelper.Decrypt(password, key);
-            Console.WriteLine(password);
-            Console.WriteLine(decriptedpwd);
         }
     }
 }

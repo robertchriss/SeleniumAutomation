@@ -22,8 +22,7 @@ namespace UnitTesting.seleniumTests
             #region test data helper
             //you cand use as IBMid (username): "doris.petrisoru@yahoo.com"
             //encrypted password: "YhRBMTukHZI8xTL4be7sD3yD98ulI+ZbwvlMowH7UEGFTpCt9ibMJ2DbUJWQlgtRRIlwzEjGUGwl4tg5KROdsJFecfuF/k/d8I7G/JXj3tAJcCsNIp9Wp1rIRC0mdbjf"
-            //decyption key: "tESTaUTOMATION"
-            //to decrypt pwd at run time use: EncryptDecryptHelper.Decrypt(encrypted_pwd, key);
+            //to decrypt pwd at run time use: EncryptDecryptHelper.Decrypt(encrypted_pwd);
             #endregion
         }
     }
