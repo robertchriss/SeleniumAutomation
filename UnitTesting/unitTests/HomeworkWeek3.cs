@@ -1,8 +1,10 @@
-﻿
-using Exercises;
+﻿using Exercises;
+using Exercises.Models;
+using Exercises.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace UnitTesting
 {
@@ -40,6 +42,21 @@ namespace UnitTesting
             numberList.Sort();
 
             Assert.IsTrue(AreListEqual(bubbleList, numberList));
+        }
+
+        [TestMethod]
+        public void CreateStudentsFromFullNameList_Returns_ExpectedStudentsModelListAndType()
+        {
+            StudentsList studentsList = new StudentsList();
+            StudentServices studentServices = new StudentServices();
+            List<string> returnedStudentList = studentsList.GetStudentList();
+            returnedStudentList.Add("Prenume Nume");
+
+            List<StudentModel> returnedStudentModelList = studentServices.CreateStudentsFromFullNameList(returnedStudentList);
+            var studentToSearch = returnedStudentModelList.FirstOrDefault(s => s.FirstName == "Prenume" && s.LastName == "Nume");
+
+            Assert.IsNotNull(studentToSearch);
+            Assert.IsInstanceOfType(studentToSearch, typeof(StudentModel));
         }
 
         private bool AreListEqual(List<int> firstList, List<int> secondList)

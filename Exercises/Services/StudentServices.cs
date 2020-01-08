@@ -1,23 +1,61 @@
-﻿using System;
+﻿using Exercises.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Exercises.Models;
 
 namespace Exercises.Services
 {
     public class StudentServices
     {
-        public List <StudentsModel> CreatesStudentsFromFullNameList(List<string> studentlist)
+        public List<StudentModel> CreateStudentsFromFullNameList(List<string> stundentList)
         {
-            List<StudentsModel> returnedList = new List<StudentsModel>();
+            List<StudentModel> returnedList = new List<StudentModel>();
 
-           // foreach(string student in StudentsList)
-            //{
-              //  string[] fullNameArray = student.Split(' ');
-          //  }
+            foreach (string student in stundentList)
+            {
+                string[] fullNameArray = student.Split(' ');
+                int lastIndex = fullNameArray.Length - 1;
+                string lastName = fullNameArray[lastIndex];
+
+                StudentModel studentToAdd = new StudentModel
+                {
+                    FirstName = student.Replace(lastName, "").Trim(),
+                    LastName = lastName
+                };
+
+                returnedList.Add(studentToAdd);
+            }
+
             return returnedList;
+        }
+
+        public string GetStudentLastName(StudentModel student)
+        {
+
+            try
+            {
+                if (!student.FullName.Equals(""))
+                {
+                    string[] fullNameArray = student.FullName.Split(' ');
+                    int lastIndex = fullNameArray.Length - 1;
+                    return fullNameArray[lastIndex];
+                }
+
+                else throw new ArgumentException("No full name was set");
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException("No full name was set");
+            }
+           
+        }
+
+        public string GetStudentFirstName(StudentModel student)
+        {
+            if (student.LastName == null)
+                student.LastName = GetStudentLastName(student);
+            student.FirstName = student.FullName.Replace(student.LastName, "").Trim();
+
+            return student.FirstName;
         }
     }
 }
